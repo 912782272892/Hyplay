@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Primera Página Web</title>
+    <style>
+        /* Reset y estilos básicos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        
+        /* Header */
+        header {
+            background: #35424a;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Navegación */
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #e8491d;
+            padding: 0.5rem 0;
+        }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        nav a:hover {
+            background: #35424a;
+        }
+        
+        /* Contenido principal */
+        .container {
+            width: 80%;
+            margin: 2rem auto;
+            overflow: hidden;
+        }
+        
+        /* Secciones */
+        section {
+            background: #fff;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        section h2 {
+            color: #e8491d;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #f4f4f4;
+            padding-bottom: 0.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: #35424a;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+            
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav a {
+                margin: 0.2rem 0;
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a Mi Página Web</h1>
+        <p>Un sitio creado con HTML, CSS y JavaScript</p>
+    </header>
+    
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#acerca">Acerca de</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+    
+    <div class="container">
+        <section id="inicio">
+            <h2>Inicio</h2>
+            <p>Esta es una página web de ejemplo creada con código HTML, CSS y JavaScript. Puedes usarla como base para tu propio sitio web.</p>
+            <p>Modifica el contenido, los colores y las secciones según tus necesidades.</p>
+        </section>
+        
+        <section id="servicios">
+            <h2>Nuestros Servicios</h2>
+            <ul>
+                <li>Diseño Web Responsive</li>
+                <li>Desarrollo de Aplicaciones</li>
+                <li>Optimización SEO</li>
+                <li>Marketing Digital</li>
+            </ul>
+        </section>
+        
+        <section id="acerca">
+            <h2>Acerca de Nosotros</h2>
+            <p>Somos un equipo apasionado por el desarrollo web y la creación de soluciones digitales innovadoras.</p>
+            <p>Nuestra misión es ayudar a negocios y emprendedores a establecer su presencia en línea de manera efectiva.</p>
+        </section>
+        
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form id="contactForm">
+                <div style="margin-bottom: 1rem;">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required style="width: 100%; padding: 0.5rem;">
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required style="width: 100%; padding: 0.5rem;">
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" required style="width: 100%; padding: 0.5rem; height: 100px;"></textarea>
+                </div>
+                <button type="submit" style="background: #e8491d; color: #fff; border: none; padding: 0.7rem 1.5rem; border-radius: 5px; cursor: pointer;">Enviar</button>
+            </form>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 Mi Página Web. Todos los derechos reservados.</p>
+    </footer>
+    
+    <script>
+        // JavaScript básico
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Obtener valores del formulario
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            
+            // Mostrar mensaje de éxito
+            alert(`Gracias ${name}! Hemos recibido tu mensaje. Te contactaremos en ${email} pronto.`);
+            
+            // Resetear el formulario
+            this.reset();
+        });
+        
+        // Cambiar color del header al hacer scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.backgroundColor = '#2c3e50';
+            } else {
+                header.style.backgroundColor = '#35424a';
+            }
+        });
+    </script>
+</body>
+                      </html>
